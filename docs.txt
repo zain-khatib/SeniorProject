@@ -1,0 +1,57 @@
+1-stereoCalibrate()
+    input:
+        objectpoints
+        imagepoints1
+        imagepoints2
+        imagesize(h,w)
+        flags
+        criteria
+
+    output:
+        cameramatrix1
+        distcoeffs1
+        cameramatrix2
+        distcoeffs2
+        rotationmatrix
+        translationmatrix
+        essentialmatrix
+        fundementalmatrix
+
+2-stereoRectify()
+    input:
+        cameramatrix1
+        distcoeffs1
+        cameramatrix2
+        distcoeffs2
+        imagesize
+        rotationmatrix
+        translation matrix
+
+    output:
+        rectificationmatrix1
+        rectificationmatrix2
+        projectionmatrix1
+        projectionmatrix2
+        disparitytodepthmapping
+        flags
+        alpha
+        newimagesize
+        validpixroi1
+        validpixrot2
+
+3-initUndistortRectifyMap()
+    input:
+        cameramatrix
+        distcoeffs
+        rotationmatrix
+        newcameramatrix
+        imagesize
+
+    output:
+        map1
+        map2
+
+
+note:
+map1:undistortion
+map2:rectification
